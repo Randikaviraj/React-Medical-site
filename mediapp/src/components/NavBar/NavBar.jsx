@@ -20,7 +20,7 @@ class NavBar extends Component {
       <>
         <nav className="navbar">
           <div className="navbar-container">
-            <Link className="navbar-logo" to="/">
+            <Link className="navbar-logo" to="/" onClick={this.closeMenu}> 
               Medi-APP
               <i class="fab fa-medrt"></i>
             </Link>
