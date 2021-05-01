@@ -67,6 +67,10 @@ textarea {
     display: flex;
 }
 
+.circular-progres{
+    margin-top: 3em;
+}
+
 /* #usrform{
     display: flex;
     flex-direction: column;
