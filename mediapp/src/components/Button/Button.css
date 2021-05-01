@@ -21,6 +21,15 @@
     border-color: #ec7070;
 }
 
+.btn-solid-green{
+    border-radius: 10px;
+    background-color: #a7e76b;
+    color: #ffffff;
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+}
+
+
 
 .btn-solid{
     padding-left: 0.9em;
@@ -42,10 +51,16 @@
     color: #ffffff;
 }
 
+.btn-solid-green:hover{
+    background-color: transparent;
+    color:  #a7e76b;
+}
 
 
 
-@media    (max-width:550px){
+
+
+@media   (max-width:550px){
   
     .btn{
         font-size: 1rem;
