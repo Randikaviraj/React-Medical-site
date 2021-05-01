@@ -28,7 +28,8 @@ class NavBar extends Component {
             <div className="menu-icon" onClick={this.handleMenu}>
               <i
                 className={this.state.click ? "fas fa-bars" : "fas fa-times"}
-              ></i>
+              >
+              </i>
             </div>
             <ul className={!this.state.click ? "nav-menu active" : "nav-menu"}>
               <li className="nav-item">
@@ -46,7 +47,7 @@ class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/"
+                  to="/hospitals"
                   className={
                     this.state.page_no == 2
                       ? "nav-links current-page"
@@ -59,7 +60,7 @@ class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/"
+                  to="/doctors"
                   className={
                     this.state.page_no == 3
                       ? "nav-links current-page"
@@ -72,7 +73,7 @@ class NavBar extends Component {
               </li>
               <li className="nav-item">
                 <Link
-                  to="/"
+                  to="/about"
                   className={
                     this.state.page_no == 4
                       ? "nav-links current-page"

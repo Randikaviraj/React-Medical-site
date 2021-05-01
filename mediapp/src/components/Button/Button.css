@@ -1,0 +1,54 @@
+.btn{
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0.7em;
+}
+
+.btn-outline{
+    background-color: transparent;
+    color: #ffffff;
+    border-width: 0.1em;
+    border-color: #ffffff;
+    
+}
+
+.btn-outline-red{
+    color: #ec7070;
+    border-color: #ec7070;
+}
+
+
+.btn-solid{
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+}
+
+.btn-outline:hover{
+    background-color: #ffffff;
+    color: black;
+}
+
+.btn-solid:hover{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.btn-outline-red:hover{
+    background-color: #ec7070;
+    color: #ffffff;
+}
+
+
+
+
+@media    (max-width:550px){
+  
+    .btn{
+        font-size: 1rem;
+        
+    }
+}
