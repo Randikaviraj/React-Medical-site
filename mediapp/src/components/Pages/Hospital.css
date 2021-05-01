@@ -1,0 +1,21 @@
+.hospital-cord-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 10em;
+}
+
+
+
+@media (max-width:900px){
+    .hospital-cord-container{
+        flex-direction: column;
+        align-items: center;
+        margin: 1em;
+    }
+
+    .hospital-cord{
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
+}
+
