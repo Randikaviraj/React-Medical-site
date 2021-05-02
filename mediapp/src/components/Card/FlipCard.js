@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import TextField from "@material-ui/core/TextField";
+
 import "./FlipCard.css";
 
 export default class FlipCard extends Component {
@@ -36,7 +36,7 @@ export default class FlipCard extends Component {
                       color="textSecondary"
                       component="p"
                     >
-                      {this.props.children}
+                      {this.props.Typography}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -50,25 +50,19 @@ export default class FlipCard extends Component {
           </div>
           <div className="flip-card-back">
             <h1>Let's Find out</h1>
-            <TextField
-              id="outlined-basic"
-              label=""
-              variant="outlined"
-            />
+            {this.props.children}
             <Button
               variant="outlined"
               color="secondary"
-              style={{     
-                paddingLeft:"0.9em",
-                paddingRight:"0.9em",
-                fontWeight:700,
-                fontSize:"1.5em",
+              style={{
+                paddingLeft: "0.9em",
+                paddingRight: "0.9em",
+                fontWeight: 700,
+                fontSize: "1.5em",
                 margin: "3em",
-                paddingTop:"0.2em",
-                paddingBottom:"0.2em"
-
-            
-            }}
+                paddingTop: "0.2em",
+                paddingBottom: "0.2em",
+              }}
             >
               SEARCH
             </Button>
