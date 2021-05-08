@@ -63,6 +63,7 @@ export default class FlipCard extends Component {
                 paddingTop: "0.2em",
                 paddingBottom: "0.2em",
               }}
+              onClick={this.props.onSubmit}
             >
               SEARCH
             </Button>
