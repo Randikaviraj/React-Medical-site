@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import {connect} from "react-redux";
+import {onPageSetAction} from "../ReduxStore/actions"
 import "./NavBar.css";
 
 class NavBar extends Component {
   state = {
     click: true,
-    page_no: 1,
   };
 
   handleMenu = () => {
@@ -13,10 +14,13 @@ class NavBar extends Component {
   };
 
   closeMenu = (page_num) => {
-    this.setState({ click: true, page_no: page_num });
+    this.setState({ click: true});
+    this.props.onPageSet(page_num)
   };
 
+
   render() {
+    console.log(this.props.page_no)
     return (
       <>
         <nav className="navbar">
@@ -36,7 +40,7 @@ class NavBar extends Component {
                 <Link
                   to="/"
                   className={
-                    this.state.page_no == 1
+                    this.props.page_no == 1
                       ? "nav-links current-page"
                       : "nav-links"
                   }
@@ -49,7 +53,7 @@ class NavBar extends Component {
                 <Link
                   to="/hospitals"
                   className={
-                    this.state.page_no == 2
+                    this.props.page_no == 2
                       ? "nav-links current-page"
                       : "nav-links"
                   }
@@ -62,7 +66,7 @@ class NavBar extends Component {
                 <Link
                   to="/doctors"
                   className={
-                    this.state.page_no == 3
+                    this.props.page_no == 3
                       ? "nav-links current-page"
                       : "nav-links"
                   }
@@ -75,7 +79,7 @@ class NavBar extends Component {
                 <Link
                   to="/about"
                   className={
-                    this.state.page_no == 4
+                    this.props.page_no == 4
                       ? "nav-links current-page"
                       : "nav-links"
                   }
@@ -92,4 +96,15 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+const  mapStateToProps=(state)=>{
+  return{
+    page_no:state.pageNum
+  }
+}
+
+const mapDispachToProps=(dispach)=>{
+  return{
+    onPageSet:(page_no)=>dispach(onPageSetAction(page_no)),
+  }
+}
+export default connect(mapStateToProps,mapDispachToProps)(NavBar);

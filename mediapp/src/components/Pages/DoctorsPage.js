@@ -6,8 +6,10 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import DetailTable from "../Table/DetailTable";
 import "./Hospital.css";
+import {connect} from "react-redux";
+import {onPageSetAction,} from "../ReduxStore/actions"
 
-export default class DoctorsPage extends Component {
+class DoctorsPage extends Component {
   state = {
     doctor1: "",
     specializedField: "",
@@ -23,6 +25,8 @@ export default class DoctorsPage extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
+    this.props.onPageSet(3)
+
   }
 
   componentWillUnmount() {
@@ -173,3 +177,11 @@ export default class DoctorsPage extends Component {
     );
   };
 }
+
+const mapDispachToProps=(dispach)=>{
+  return{
+    onPageSet:(page_no)=>dispach(onPageSetAction(page_no)),
+  }
+}
+
+export default connect(null,mapDispachToProps)(DoctorsPage)

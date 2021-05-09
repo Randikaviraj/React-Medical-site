@@ -4,8 +4,10 @@ import TextField from "@material-ui/core/TextField";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import DetailTable from "../Table/DetailTable";
 import "./Hospital.css";
+import {connect} from "react-redux";
+import {onPageSetAction,} from "../ReduxStore/actions"
 
-export default class HospitalPage extends Component {
+class HospitalPage extends Component {
   state = {
     hospital1: "",
     hospital2: "",
@@ -21,6 +23,7 @@ export default class HospitalPage extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
+    this.props.onPageSet(2)
   }
 
   componentWillUnmount() {
@@ -167,3 +170,12 @@ export default class HospitalPage extends Component {
     );
   };
 }
+
+
+const mapDispachToProps=(dispach)=>{
+  return{
+    onPageSet:(page_no)=>dispach(onPageSetAction(page_no)),
+  }
+}
+
+export default connect(null,mapDispachToProps)(HospitalPage)

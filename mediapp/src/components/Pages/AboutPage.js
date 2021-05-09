@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { HashLink } from "react-router-hash-link";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import {connect} from "react-redux";
+import {onPageSetAction,} from "../ReduxStore/actions"
 import Button from "../Button/Button";
 import "./About.css";
 
-export default class AboutPage extends Component {
+class AboutPage extends Component {
   state = {
     fname: "",
     lname: "",
@@ -60,14 +62,12 @@ export default class AboutPage extends Component {
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
+    this.props.onPageSet(4)
   }
 
-  componentDidMount() {
-    window.addEventListener("resize", this.handleResize);
-  }
 
   componentWillUnmount() {
-    window.addEventListener("resize", this.handleResize);
+    window.removeEventListener("resize", this.handleResize);
   }
 
   render() {
@@ -186,3 +186,11 @@ export default class AboutPage extends Component {
     );
   };
 }
+
+const mapDispachToProps=(dispach)=>{
+  return{
+    onPageSet:(page_no)=>dispach(onPageSetAction(page_no)),
+  }
+}
+
+export default connect(null,mapDispachToProps)(AboutPage)
